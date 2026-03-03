@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sistema Retro-Fantástico</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- ESCRITORIO -->
+    <div id="desktop" class="desktop">
+        <!-- ICONOS DEL ESCRITORIO -->
+        <div class="desktop-icons" id="desktopIcons">
+            <!-- Los iconos se generarán dinámicamente con JavaScript -->
+        </div>
+
+        <!-- VENTANAS (contenedor flotante) -->
+        <div class="windows-container" id="windowsContainer">
+            <!-- Las ventanas se crearán dinámicamente -->
+        </div>
+
+        <!-- TASKBAR (barra inferior) -->
+        <div class="taskbar">
+            <div class="taskbar-start">
+                <button class="start-button">
+                    <span class="start-icon">❦</span>
+                    <span class="start-text">Inicio</span>
+                </button>
+            </div>
+            <div class="taskbar-tasks" id="taskbarTasks">
+                <!-- Los botones de ventanas activas se añaden aquí -->
+            </div>
+            <div class="taskbar-tray">
+                <div class="system-tray">
+                    <span class="tray-icon">🔊</span>
+                    <span class="tray-icon">🌐</span>
+                    <span class="tray-time" id="systemTime">12:34</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THREE.JS desde CDN unpkg - Expone globalmente -->
+    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/helpers/SkeletonHelper.js"></script>
+
+    <!-- Script de verificación de carga -->
+    <script>
+        console.log('🔍 Verificando carga de THREE.js...');
+        setTimeout(() => {
+            console.log('✅ THREE:', !!window.THREE);
+            console.log('✅ THREE.GLTFLoader:', !!(window.THREE && window.THREE.GLTFLoader));
+            console.log('✅ window.GLTFLoader:', !!window.GLTFLoader);
+            console.log('✅ THREE.OrbitControls:', !!(window.THREE && window.THREE.OrbitControls));
+            console.log('✅ window.OrbitControls:', !!window.OrbitControls);
+        }, 500);
+    </script>
+
+    <!-- SCRIPTS PRINCIPALES -->
+    <script src="js/windowManager.js"></script>
+    <script src="js/viewer3d.js"></script>
+    <script src="js/desktop.js"></script>
+</body>
+</html>
